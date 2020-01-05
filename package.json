@@ -18,7 +18,8 @@
     "http-proxy-middleware": "^0.20.0",
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "zlib": "^1.0.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
