@@ -27,13 +27,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
-app.use('/proxy', proxy('http://vendorsinapi.aranyaa-construction.com', {
+app.use('/proxy', proxy('https://test-api.vendorsin.com', {
   userResDecorator: function (proxyRes, proxyResData) {
     return new Promise(function (resolve) {
-      var data = zlib.deflateSync(proxyResData).toString('base64');
-      setTimeout(function () {
-        resolve(data);
-      }, 1);
+      //var data = zlib.deflateSync(proxyResData).toString('base64');
+      //setTimeout(function () {
+        //resolve(data);
+      //}, 1);
+      resolve(proxyResData);
     });
   }
 }));
