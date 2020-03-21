@@ -25,14 +25,18 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+//const apiURL = 'https://test-api.vendorsin.com';
+//const apiURL = 'http://vendorsinapi.aranyaa-construction.com';
+const apiURL = 'http://outsource-management.aranyaa-construction.com';
+
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
-app.use('/proxy', proxy('https://test-api.vendorsin.com', {
+app.use('/proxy', proxy(apiURL, {
   userResDecorator: function (proxyRes, proxyResData) {
     return new Promise(function (resolve) {
       //var data = zlib.deflateSync(proxyResData).toString('base64');
       //setTimeout(function () {
-        //resolve(data);
+      //resolve(data);
       //}, 1);
       resolve(proxyResData);
     });
