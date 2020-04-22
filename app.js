@@ -26,8 +26,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //const apiURL = 'https://test-api.vendorsin.com';
-//const apiURL = 'http://vendorsinapi.aranyaa-construction.com';
-const apiURL = 'http://outsource-management.aranyaa-construction.com';
+const apiURL = 'http://vendorsinapi.aranyaa-construction.com';
+//const apiURL = 'http://outsource-management.aranyaa-construction.com';
 
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
